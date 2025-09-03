@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Person {
+private:
+    char name[50];
+
+public:
+    int age;
+
+    void setName(const char* newName) {
+        strcpy(name, newName);
+    }
+
+    const char* getName() const {
+        return name;
+    }
+
+    void greet() const {
+        cout << "Hello, my name is " << name << endl;
+    }
+};
+
+int main() {
+    Person person1;
+    Person person2;
+
+    person1.setName("Alice");
+    person2.setName("Bob");
+
+    person1.age = 25;
+    person2.age = 30;
+
+    person1.greet();
+    person2.greet();
+
+    cout << person1.getName() << " is " << person1.age << " years old." << endl;
+    cout << person2.getName() << " is " << person2.age << " years old." << endl;
+
+    return 0;
+}
